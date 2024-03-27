@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>img slider</title>
+	<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+	<div>
+		<img src="images/005.jpg" width="800" height="400" title="img.." id="img1">
+		<button type="button" id="next" onclick="nextbtn()">next</button>
+		<button type="button" id="prev" onclick="prevbtn()">previous</button>
+		<!-- <h1 id="counter">0</h1> -->
+	</div>	
+
+</body>
+<script>
+		
+	var x=0;
+	var aoimg=["images/005.jpg","images/5.jpg","images/8hd.jpg","images/9hd.jpg","images/009.jpg"]
+
+	function nextbtn(){
+		document.getElementById('img1').src=aoimg[x];
+
+		if (x==4){
+			x=0;
+			document.getElementById('img1').src=aoimg[x];
+		}
+		else if (x>=0){
+			x++;
+			document.getElementById('img1').src=aoimg[x];
+		}
+
+		// document.getElementById('counter').innerHTML=x;
+	}
+
+	function prevbtn(){
+		document.getElementById('img1').src=aoimg[x];
+
+		if (x==0){
+			x=4;
+			document.getElementById('img1').src=aoimg[x];
+		}
+
+		else if(x<=4){
+			x--;
+			document.getElementById('img1').src=aoimg[x];
+		}
+		// document.getElementById('counter').innerHTML=x;
+	}
+</script>
+</html>
